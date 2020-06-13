@@ -17,7 +17,7 @@ module.exports = {
             },
             {
                 test: /\.css$/i,
-                use: [MiniCssExtractPlugin.loader, 'css-loader'],
+                use: [MiniCssExtractPlugin.loader, 'css-loader','sass-loader'],
             }
         ]
     },
@@ -26,6 +26,7 @@ module.exports = {
         minimizer: [new TerserPlugin()],
       },
     plugins: [
+        new MiniCssExtractPlugin(),
         new HtmlWebPackPlugin({
             template: "./src/client/views/index.html",
             filename: "./index.html",
