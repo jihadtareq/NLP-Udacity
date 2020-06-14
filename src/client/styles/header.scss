@@ -1,5 +1,14 @@
 header {
     display: flex;
-    justify-content: space-between;
-    padding: 10px 40px;
+    justify-content: space-evenly;
+    padding: 50px 40px;
+    background-color:#0088cc;
+    align-items: center;
+    text-align: center;
+     div {
+         margin: 10px;
+         font-size: 30px;
+         font-weight: bolder;
+     }
+
 }

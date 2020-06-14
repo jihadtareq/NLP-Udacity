@@ -13,15 +13,24 @@
     <body>
 
         <header>
-            <div class="">
-                Logo
-            </div>
-            <div class="">
-                navigation
-            </div>
+                <div class="">
+                    udacity
+                </div>
+                <div class="">
+                    Project: Evaluate a News Article with NLP
+                </div>
+           
         </header>
 
         <main>
+            <h1>About Aylian Text Analysis API</h1>
+
+            <p>
+                The Aylien Text Analysis API provides powerful and flexible AI-driven content analysis solutions that bring the power of NLP to the masses. We help developers, data scientists, and marketers understand human-generated textual content at scale.
+            </p>
+
+            <h2>Try it out! Type in a "URL" to see what the Aylient NLP understands from it.</h2>
+
             <section>
                 <form class="" onsubmit="return handleSubmit(event)">
                     <input id="name" type="text" name="input" value="" onblur="onBlur()" placeholder="Name">
@@ -29,14 +38,30 @@
                 </form>
             <section>
 
-            <section>
-                <strong>Form Results:</strong>
-                <div id="results"></div>
-            </section>
+                <section class="url-results">
+                    <ul>
+                        <li>
+                            <h3>Text Polarity:</h3>
+                            <p id="polarity"></p>
+                            <h4>Confidence: </h4>
+                            <p id="polarity_confidence"></p>
+                        </li>
+    
+                        <li>
+                            <h3>Text Subjectivity:</h3>
+                            <p id="subjectivity"></p>
+                            <h4>Confidence: </h4>
+                            <p id="subjectivity_confidence"></p>
+                        </li>
+    
+                        <h3>Text Excerpt:</h3>
+                        <p id="excerpt"></p>
+                    </ul>
+                </section>
         </main>
 
-        <footer>
-            <p>This is a footer</p>
+        <footer class="ft">
+            <p>@CopyRight for Jihad Tareq</p>
         </footer>
 
     </body>
