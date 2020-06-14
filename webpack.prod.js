@@ -30,7 +30,7 @@ module.exports = {
         minimizer: [new TerserPlugin()],
       },
     plugins: [
-        new MiniCssExtractPlugin(),
+        new MiniCssExtractPlugin({filename:["[name].css"]}),
         new HtmlWebPackPlugin({
             template: "./src/client/views/index.html",
             filename: "./index.html",
