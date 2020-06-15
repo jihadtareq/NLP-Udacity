@@ -2,12 +2,7 @@
 <html lang="en" dir="ltr">
     <head>
         <meta charset="utf-8">
-        <title>Test</title>
-        <link rel="stylesheet" href="/styles/resets.scss">
-        <link rel="stylesheet" href="/styles/base.scss">
-        <link rel="stylesheet" href="/styles/header.scss">
-        <link rel="stylesheet" href="/styles/form.scss">
-        <link rel="stylesheet" href="/styles/footer.scss">
+        <title>Evaluate News</title>
     </head>
 
     <body>
@@ -32,26 +27,26 @@
             <h2>Try it out! Type in a "URL" to see what the Aylient NLP understands from it.</h2>
 
             <section>
-                <form class="" onsubmit="return handleSubmit(event)">
-                    <input id="name" type="text" name="input" value="" onblur="onBlur()" placeholder="Name">
-                    <input type="submit" name="" value="submit" onclick="return handleSubmit(event)" onsubmit="return handleSubmit(event)">
+                <form class="" onsubmit="return Client.handleSubmit(event)">
+                    <input id="textForm" type="text" name="test-text" value=""  placeholder="ACME corp was founded by John Smith in Chicago.">
+                    <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
                 </form>
             <section>
 
                 <section class="url-results">
                     <ul>
                         <li>
-                            <h3>Text Polarity:</h3>
-                            <p id="polarity"></p>
-                            <h4>Confidence: </h4>
-                            <p id="polarity_confidence"></p>
+                            <h3>Location:</h3>
+                            <p id="Location"></p>
+                            <h4>keyword: </h4>
+                            <p id="keyword"></p>
                         </li>
     
                         <li>
-                            <h3>Text Subjectivity:</h3>
-                            <p id="subjectivity"></p>
-                            <h4>Confidence: </h4>
-                            <p id="subjectivity_confidence"></p>
+                            <h3>organization:</h3>
+                            <p id="organization"></p>
+                            <h4>person: </h4>
+                            <p id="person"></p>
                         </li>
     
                         <h3>Text Excerpt:</h3>
