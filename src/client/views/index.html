@@ -2,12 +2,7 @@
 <html lang="en" dir="ltr">
     <head>
         <meta charset="utf-8">
-        <title>Test</title>
-        <link rel="stylesheet" href="/styles/resets.scss">
-        <link rel="stylesheet" href="/styles/base.scss">
-        <link rel="stylesheet" href="/styles/header.scss">
-        <link rel="stylesheet" href="/styles/form.scss">
-        <link rel="stylesheet" href="/styles/footer.scss">
+        <title>Evaluate News</title>
     </head>
 
     <body>
@@ -32,9 +27,9 @@
             <h2>Try it out! Type in a "URL" to see what the Aylient NLP understands from it.</h2>
 
             <section>
-                <form class="" onsubmit="return handleSubmit(event)">
-                    <input id="textForm" type="text" name="input" value="" onblur="onBlur()" placeholder="ACME corp was founded by John Smith in Chicago.">
-                    <input type="submit" name="" value="submit" onclick="return handleSubmit(event)" onsubmit="return handleSubmit(event)">
+                <form class="" onsubmit="return Client.handleSubmit(event)">
+                    <input id="textForm" type="text" name="test-text" value=""  placeholder="ACME corp was founded by John Smith in Chicago.">
+                    <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
                 </form>
             <section>
 
