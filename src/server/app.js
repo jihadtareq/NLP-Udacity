@@ -31,7 +31,7 @@ app.get('/test', function (req, res) {
 
 //Post
 
-app.post('/api',requestPost.postAlyien)
-app.post('/article',requestPost.postAlyienURL)
+app.post('/api',requestPost.validate,requestPost.postAlyien)
+app.post('/article',requestPost.validate,requestPost.postAlyienURL)
 
 module.exports = app;
