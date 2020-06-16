@@ -3,16 +3,18 @@ const webpack = require('webpack')
 const HtmlWebPackPlugin = require("html-webpack-plugin")
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const WorkboxPlugin = require('workbox-webpack-plugin');
+
 
 module.exports = {
     entry: './src/client/index.js',
+    output: {
+      libraryTarget: 'var',
+      library: 'Client'
+    },
     mode: 'development',
     devtool: 'source-map',
-    stats: 'verbose',
-    output: {
-        libraryTarget: 'var',
-        library: 'Client'
-      },
     module: {
         rules: [
             {
@@ -27,12 +29,12 @@ module.exports = {
         ]
     },
     plugins: [
+         new BundleAnalyzerPlugin({
+            analyzerMode:'server',
+        }),
         new HtmlWebPackPlugin({
             template: "./src/client/views/index.html",
             filename: "./index.html",
-        }),
-        new BundleAnalyzerPlugin({
-            analyzerMode:'server',
         }),
         new CleanWebpackPlugin({
             // Simulate the removal of files
@@ -42,6 +44,10 @@ module.exports = {
             // Automatically remove all unused webpack assets on rebuild
             cleanStaleWebpackAssets: true,
             protectWebpackAssets: false
-        })
+        }),
+        new WorkboxPlugin.GenerateSW({
+          clientsClaim: true,
+          skipWaiting: true
+      }), 
     ]
 }
