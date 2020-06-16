@@ -1,40 +1,7 @@
 const dotenv = require('dotenv');
 dotenv.config();
-var path = require('path')
-const express = require('express')
-var bodyParser = require('body-parser')
-const mockAPIResponse = require('./mockAPI.js');
-
-const app = express()
- 
-// parse application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ extended: false }))
- 
-// parse application/json
-app.use(bodyParser.json())
-
-app.use(express.static('dist'))
-
-console.log(__dirname)
-
-app.get('/', function (req, res) {
-     res.sendFile('dist/index.html')
-     return
-    //res.sendFile(path.resolve('src/client/views/index.html'))
-})
-
-// designates what port the app will listen to for incoming requests
-app.listen(8080, function () {
-    console.log('Example app listening on port 8080!')
-})
-
-app.get('/test', function (req, res) {
-    res.send(mockAPIResponse)
-    return
-})
 
 // set aylien API credentias
-
 function postAlyien(req,res,next)
 {
   var AYLIENTextAPI = require('aylien_textapi');
@@ -75,8 +42,5 @@ function postAlyienURL(req,res,next)
   });
 }
 
-
-//Post
-
-app.post('/api',postAlyien)
-app.post('/article',postAlyienURL)
+exports.postAlyien = postAlyien
+exports.postAlyienURL = postAlyienURL
