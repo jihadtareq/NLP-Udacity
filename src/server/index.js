@@ -1,6 +1,16 @@
 const dotenv = require('dotenv');
 dotenv.config();
 
+//check if input is invalid
+function validate(req, res, next) {
+  if(!req.body.text ) { 
+      return res.status(400).json({
+         message: 'Invalid input'
+      })
+  } 
+  return next();
+}
+
 // set aylien API credentias
 function postAlyien(req,res,next)
 {
@@ -42,5 +52,6 @@ function postAlyienURL(req,res,next)
   });
 }
 
+exports.validate = validate
 exports.postAlyien = postAlyien
 exports.postAlyienURL = postAlyienURL
