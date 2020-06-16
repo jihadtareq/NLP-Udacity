@@ -18,11 +18,14 @@ function handleSubmit(event) {
     })
     .then(res => res.json())
     .then(data => {
-
-        document.getElementById('Location').innerHTML = data.Location;
-        document.getElementById('keyword').innerHTML = data.keyword;
+        console.log(data)
+        document.getElementById('text').innerHTML = data.text;
+        document.getElementById('language').innerHTML = data.language;
+        document.getElementById('entities').innerHTML = data.entities;
+        document.getElementById('location').innerHTML = data.location;
+        /* document.getElementById('keyword').innerHTML = data.keyword;
         document.getElementById('organization').innerHTML = data.organization;
-        document.getElementById('person').innerHTML = data.person;
+        document.getElementById('person').innerHTML = data.person;  */
 
     });
 }

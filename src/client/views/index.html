@@ -35,28 +35,27 @@
                 required
                 id="test-text"
                 type="text"
-                placeholder="John is a very good football player."
+                placeholder="ACME corp was founded by John Smith in London"
               />
               <input class="submit-button" type="submit" value="Submit" />
             </form>
 
             <section class="url-results">
               <ul>
-                  <li>
-                      <h3>Location:</h3>
-                      <p id="Location"></p>
-                      <h4>keyword: </h4>
-                      <p id="keyword"></p>
-                  </li>
-
-                  <li>
-                      <h3>organization:</h3>
-                      <p id="organization"></p>
-                      <h4>person: </h4>
-                      <p id="person"></p>
-                  </li>
-                </ul>
-                </section>
+                <li>          
+                  <h3>Text:</h3>
+                  <p id="text"></p>
+                  <h4>Language: </h4>
+                  <p id="language"></p>
+                </li> 
+                  <ul id="entities">
+                    <li>
+                      <h4>Location</h4>
+                      <p id="location"></p>
+                    </li>
+                  </ul>        
+              </ul>
+            </section>
                 <hr>
                 <form class="" onsubmit="return Client.handleSubmitArticle(event)">
                     <label for="test-url">
