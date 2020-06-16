@@ -43,16 +43,15 @@ function postAlyien(req,res,next)
     application_key:process.env.API_KEY
   });
   textapi.entities({
-     'text': req.body
-    //text:req.body.text
+     'text': req.body.text
   }, function(error, response) {
     if (error === null) {
       Object.keys(response.entities).forEach(function(e) {
         console.log(e + ": " + response.entities[e].join(","));
       });
+      console.log(response)
+      res.send(response)
     }
-    console.log(response)
-    res.send(response)
   });
 }
 
