@@ -2,30 +2,29 @@ function handleSubmit(event) {
     event.preventDefault()
 
     // check what text was put into the form field
-    let formText = document.getElementById('textForm').value
+    const formtext = document.getElementById('test-text').value
     //checkForName(formText)
 
-    //console.log("::: Form Submitted :::")
-    if(!formText) return;
-    console.log(formText)
-    fetch('/article',{
+    console.log("::: Form Submitted :::")
+    if(!formtext) return;
+    console.log(formtext);
+    fetch('/api' , {
         method:'POST',
         mode:'cors',
         headers:{
             'Content-Type':'application/json',
         },
-        body:JSON.stringify({text : formText})
+        body:JSON.stringify({ text:formtext })
     })
     .then(res => res.json())
-    .then(function(res) {
-        console.log(res)
+    .then(data => {
 
-        document.getElementById('polarity').innerHTML = res.polarity
-        document.getElementById('polarity_confidence').innerHTML = res.polarity_confidence
-        document.getElementById('subjectivity').innerHTML = res.subjectivity
-        document.getElementById('subjectivity_confidence').innerHTML = res.subjectivity_confidence
-        document.getElementById('excerpt').innerHTML = res.text
-    })
+        document.getElementById('Location').innerHTML = data.Location;
+        document.getElementById('keyword').innerHTML = data.keyword;
+        document.getElementById('organization').innerHTML = data.organization;
+        document.getElementById('person').innerHTML = data.person;
+
+    });
 }
 
 export { handleSubmit }

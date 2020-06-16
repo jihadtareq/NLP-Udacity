@@ -26,38 +26,84 @@
 
             <h2>Try it out! Type in a "URL" to see what the Aylient NLP understands from it.</h2>
 
-            <section>
-                <form class="" onsubmit="return Client.handleSubmit(event)">
-                    <input id="textForm" type="text" name="test-text" value=""  placeholder="ACME corp was founded by John Smith in Chicago.">
-                    <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
-                </form>
-            <section>
+            <form class="" onsubmit="return Client.handleSubmit(event)">
+              <label for="test-text">
+                Try it out! Type in a statement to see what the Aylien NLP understands
+                from it:
+              </label>
+              <input
+                required
+                id="test-text"
+                type="text"
+                placeholder="John is a very good football player."
+              />
+              <input class="submit-button" type="submit" value="Submit" />
+            </form>
 
-                <section class="url-results">
+            <section class="url-results">
+              <ul>
+                  <li>
+                      <h3>Location:</h3>
+                      <p id="Location"></p>
+                      <h4>keyword: </h4>
+                      <p id="keyword"></p>
+                  </li>
+
+                  <li>
+                      <h3>organization:</h3>
+                      <p id="organization"></p>
+                      <h4>person: </h4>
+                      <p id="person"></p>
+                  </li>
+                </ul>
+                </section>
+                <hr>
+                <form class="" onsubmit="return Client.handleSubmitArticle(event)">
+                    <label for="test-url">
+                      Or, try putting in the url of an article - like from your favorite
+                      news source.
+                    </label>
+                    <input required id="test-url" type="url" placeholder="https://..." />
+                    <input class="submit-button" type="submit" value="Submit" />
+                    <p>
+                      Watch out though, each of these requests take up 3 of your allotted
+                      1000 API hits today
+                    </p>
+                  </form>
+            
+                  <section class="url-results">
                     <ul>
-                        <li>
-                            <h3>Location:</h3>
-                            <p id="Location"></p>
-                            <h4>keyword: </h4>
-                            <p id="keyword"></p>
-                        </li>
-    
-                        <li>
-                            <h3>organization:</h3>
-                            <p id="organization"></p>
-                            <h4>person: </h4>
-                            <p id="person"></p>
-                        </li>
-    
+                      <li>
+                        <h3>Text Polarity:</h3>
+                        <p id="polarity"></p>
+                        <h4>Confidence:</h4>
+                        <p id="polarity_confidence"></p>
+                      </li>
+            
+                      <li>
+                        <h3>Text Subjectivity:</h3>
+                        <p id="subjectivity"></p>
+                        <h4>Confidence:</h4>
+                        <p id="subjectivity_confidence"></p>
+                      </li>
+            
+                      <li>
                         <h3>Text Excerpt:</h3>
                         <p id="excerpt"></p>
+                      </li>
                     </ul>
-                </section>
+                  </section>
         </main>
 
         <footer class="ft">
             <p>@CopyRight for Jihad Tareq</p>
         </footer>
-
+        <script>
+          if ("serviceWorker" in navigator) {
+            window.addEventListener("load", () =>
+              navigator.serviceWorker.register("/service-worker.js")
+            );
+          }
+        </script>
     </body>
 </html>
