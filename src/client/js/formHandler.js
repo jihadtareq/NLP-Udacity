@@ -19,13 +19,15 @@ function handleSubmit(event) {
     .then(res => res.json())
     .then(data => {
         console.log(data)
+        //to get elements from entities object
+        let entities = data.entities;
+      
         document.getElementById('text').innerHTML = data.text;
         document.getElementById('language').innerHTML = data.language;
-        document.getElementById('entities').innerHTML = data.entities;
-        document.getElementById('location').innerHTML = data.location;
-        /* document.getElementById('keyword').innerHTML = data.keyword;
-        document.getElementById('organization').innerHTML = data.organization;
-        document.getElementById('person').innerHTML = data.person;  */
+        document.getElementById('keyword').innerHTML = entities.keyword;
+        document.getElementById('location').innerHTML =entities.location;
+        document.getElementById('organization').innerHTML =entities.organization;
+        document.getElementById('person').innerHTML =entities.person;
 
     });
 }
