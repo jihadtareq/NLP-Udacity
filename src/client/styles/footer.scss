@@ -1,6 +1,7 @@
 footer.ft{
     display: flex;
     background-color:#0088cc;
+    justify-content: center;
     padding: 20px;
     font-size: 100%;
 	font: inherit;
@@ -8,4 +9,15 @@ footer.ft{
     p{
      font-weight: bold;
     }
+}
+//phone
+@media only screen and (max-width: 767px) {
+}
+
+// tablet
+@media only screen and (max-width: 1000px) {
+}
+
+// desktop
+@media only screen and (min-width: 1001px) {
 }

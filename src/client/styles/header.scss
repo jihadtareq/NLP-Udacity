@@ -1,6 +1,7 @@
 header {
     display: flex;
     justify-content: space-evenly;
+    flex-direction: column;
     padding: 50px 40px;
     background-color:#0088cc;
     align-items: center;
@@ -11,4 +12,15 @@ header {
          font-weight: bolder;
      }
 
+}
+//phone
+@media only screen and (max-width: 767px) {
+}
+
+// tablet
+@media only screen and (max-width: 1000px) {
+}
+
+// desktop
+@media only screen and (min-width: 1001px) {
 }
