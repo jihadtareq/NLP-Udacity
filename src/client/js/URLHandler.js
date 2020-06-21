@@ -3,7 +3,7 @@ function handleSubmitArticle(event) {
     const url = document.getElementById("test-url").value;
     if (!url) return;
     console.log(url);
-    fetch("/article", {
+    fetch("http://localhost:8000/article", {
       method: "POST",
       mode: "cors",
       headers: {
